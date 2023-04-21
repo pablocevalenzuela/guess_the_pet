@@ -3,29 +3,23 @@ input_word = ""
 guess_limit = 3
 guess_count = 0
 state_guesses = false
-track = 1
+track = [ "It's a bird.", "Turns almost all of his head.", "It's eyes are really big." ]
+track_count = 1
 
 while input_word != secret_pet && !state_guesses
-    if guess_count < guess_limit 
-      if !state_guesses
-        puts "Track #{track}: It's a bird."
-      elsif !state_guesses
-        puts "Track #{track}: Turns almost all of his head."
-      else
-        puts "Track #{track}: Her eyes are really big."
-      end
-      puts "What is the secret pet?"
-      word = gets.chomp()
-      guess_count += 1
-      track += 1
-    else 
-      state_guesses = true
-    end  
-
+  if guess_count < guess_limit  
+    puts "Track #{track_count}: #{track[guess_count]}"
+    puts "What is the secret pet?"
+    input_word = gets.chomp().to_s
+    guess_count += 1
+    track_count += 1
+  else 
+    state_guesses = true
+  end  
 end
 
 if state_guesses
- puts "You lose :("
+  puts "You lose :("
 else
- puts "You won, It is a Owl :)"
+  puts "You won, It is a #{secret_pet.upcase} :)"
 end

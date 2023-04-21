@@ -1,5 +1,5 @@
 ## Description
-Is a engine in Ruby that manager English words abbreviations and the save into a Hash.
+It's a game in Ruby where You can guess what kind of animal is my Pet and used the tracks.
 
 - Motivations:
-More time to develop ideas and less time for bureaucracy.
+Learn and improve my Ruby knowledge and Logicals.
